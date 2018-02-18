@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="me.xp090.shuffledairy.MainActivity">
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:layout_margin="8dp"
+        android:src="@drawable/ic_action_note_add" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/dairy_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="bottom"/>
+
+    <FrameLayout
+        android:id="@+id/new_note_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#c4000000"
+        android:visibility="gone">
+
+    </FrameLayout>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:clipToPadding="false"
+        android:visibility="gone"
+        app:cardBackgroundColor="@color/md_yellow_500"
+        app:cardCornerRadius="2dp"
+        app:cardElevation="2dp"
+        app:cardPreventCornerOverlap="false"
+        app:cardUseCompatPadding="true"
+        tools:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:animateLayoutChanges="true"
+            android:clipToPadding="false"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/etxt_note"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:background="@android:color/transparent"
+                android:inputType="textMultiLine"
+                android:minHeight="120dp"
+                android:gravity="top"
+                android:textColor="@color/md_black"
+                android:textCursorDrawable="@null"
+                android:textColorHint="#6b6b6b"
+                android:hint="@string/add_new_note_hint" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:background="#3e3e3e"
+                android:visibility="visible" />
+
+            <FrameLayout
+                android:id="@+id/note_buttons_bar"
+                style="?android:attr/buttonBarStyle"
+                android:layout_width="175dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="8dp"
+                android:animateLayoutChanges="true"
+                android:orientation="horizontal"
+                android:visibility="visible">
+
+                <me.xp090.shuffledairy.design.ShrinkableButton
+                    android:id="@+id/btn_positive"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="left"
+                    android:background="@drawable/ic_action_check_unclickable"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:enabled="false" />
+
+                <me.xp090.shuffledairy.design.ShrinkableButton
+                    android:id="@+id/btn_color"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/ic_action_color_lens"
+                    android:foreground="?attr/selectableItemBackground" />
+
+                <me.xp090.shuffledairy.design.ShrinkableButton
+                    android:id="@+id/btn_negative"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="right"
+                    android:background="@drawable/ic_action_cancel"
+                    android:foreground="?attr/selectableItemBackground" />
+
+
+            </FrameLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</android.support.design.widget.CoordinatorLayout>
